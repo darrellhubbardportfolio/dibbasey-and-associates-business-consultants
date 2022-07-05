@@ -1,0 +1,88 @@
+
+<title> <%= title %> </title>
+<!-- Stylesheet -->
+<link rel="stylesheet" href="/public/css/styles.css" />
+<link rel="stylesheet" href="/public/css/AdminPage.css" />
+<link rel="stylesheet" href="/public/css/AppointmentPlannerPage.css" />
+
+	<article id="schedule-page">
+		<h1> Appointment Planner </h1>
+		<span>
+			Before a client can book, its a good idea to setup a schedule for them to choose from.
+		</span>
+
+		<span>
+			Select a day or days you want to add times to. Uncheck the days you want to add different times to.
+		</span>
+	</article>
+
+	<ul id="days-of-the-week"></ul>
+
+	<button type="button" name="add_new_appointment" onclick="open_appointment_form(this);">
+		<span class="material-icons"> add </span>
+		<span> Schedule </span>
+	</button>
+
+	<form action="/schedule" method="POST" name="schedule_form">
+
+		<button type="button" name="days-of-the-week" onclick="add_schedule_times(this)">
+			<span> Add Time </span>
+		</button>
+
+		<div id="set-schedule-hours">
+
+			<div class="schedule-hours">
+				<span> Set Schedule Time </span>
+				<div>
+					<div class="hours container d-flex flex-column align-items-center justify-content-center">
+						<input type="number" name="schedule_hours" minlength="2" maxlength="2" max="12" min="1" />
+						<span style="font-size: 12px;"> hr </span>
+					</div>
+
+					<span> : </span>
+						
+					<div class="minutes container d-flex flex-column align-items-center justify-content-center">
+						<input type="number" name="schedule_minutes" minlength="2" maxlength="2" max="59" min="0" />
+						<span style="font-size: 12px;"> min </span>
+					</div>
+				</div>
+				<select name="select_schedule_time" value="am">
+					<option value="am"> am </option>
+					<option value="pm"> pm </option>
+				</select>
+			</div>
+
+			<button type="button" name='set_appointment_time' onclick="set_time(this)"> set time </button>
+			<span style="margin: 8px 0; font-size: 12px; cursor: pointer;" onclick="close_schedule_times(this)"> close app </span>
+		</div>
+	
+		<span onclick='close_appointment_form(this)' id="close-scheduler"> close schedule planner </span>
+
+	</form>
+
+	<div id="Schedule">
+
+		<div id="Update-Schedule-Views" class="container d-flex align-items-center justify-content-center">
+			<div id="searchform" class="container d-flex align-items-center justify-content-center">
+				<span class="material-icons"> search </span>
+				<input type="text" name="search" placeholder="search..." />
+			</div>
+			<select name="" value="">
+				<option></option>
+				<option value="mornings"> mornings </option>
+				<option value="evenings"> evenings </option>
+			</select>
+		</div>
+
+		<ul id="schedule-list"></ul>
+
+	</div>
+
+	<div id="Schedule-Details">
+		<span> search results </span>
+	</div>
+
+<!-- JavaScript -->
+<script src="/public/js/AuthNav.js"></script>
+<script src="/public/js/bookings.js"></script>
+<script src="/public/js/Scheduler.js"></script>

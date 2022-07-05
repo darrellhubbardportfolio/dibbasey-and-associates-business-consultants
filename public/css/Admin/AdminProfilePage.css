@@ -1,0 +1,149 @@
+body {
+    background-color: white;
+}
+
+#MyAccount, #PersonalInformation, #ContactInformation {
+    width: 600px;
+    min-height: 125px;
+    background-color: white;
+    gap: 4px;
+    padding: 20px;
+    margin: 8px 0;
+    position: relative;
+    /*margin-right: auto;*/
+    border-bottom: 2px solid lightgray;
+}
+
+#SocialMediaLinks {
+    width: 300px;
+    max-width: 300px;
+    height: 300px;
+    position: absolute;
+    right: 4px;
+    bottom: 4px;
+    background-color: #343a40;
+    color: white;
+    gap: 4px;
+    padding: 20px;
+    border-top-left-radius: 60px;
+    box-shadow: -4px -4px 16px #aaaaaa;
+}
+
+#SocialMediaLinks::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    height: 30px;
+    background-color: #afeeee;
+}
+
+#ProfilePic {
+    width: 300px;
+    max-width: 300px;
+    height: 200px;
+    position: absolute;
+    left: 0;
+    top: 4px;
+    background-color: white;
+    gap: 4px;
+    padding: 20px;
+}
+
+.profile-form-data {
+    width: 100%;
+    max-width: 100%;
+    gap: 4px;
+    height: 60px;
+}
+
+.profile-form-data>:nth-child(1) {
+    flex: 1;
+    gap: 4px;
+    height: 60px;
+}
+
+.profile-form-data>:nth-child(1)> label {
+    width: 425px;
+    max-width: 425px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.profile-form-data>:nth-child(1)> input {
+    width: 425px;
+    max-width: 425px;
+    height: 45px;
+    border: 0;
+    font-size: 14px;
+    background-color: transparent;
+    outline: none;
+}
+
+.profile-form-data>:nth-child(1)> input::-webkit-input-placeholder {
+    font-size: 14px;
+}
+
+.edit-profile-items {
+    width: 60px;
+    height: 60px;
+}
+
+.edit-profile-items>:nth-child(2) {
+    font-size: 10px;
+}
+
+.edit-profile-icons {
+    font-size: 21px;
+    transition: 0.16s ease-in;
+    color: #343a40;
+}
+
+.edit-profile-icons:hover {
+    transition: 0.16s ease-in;
+    cursor: pointer;
+    color: royalblue;
+}
+
+
+#SocialMediaLinks> .profile-form-data {
+    max-width: 100%;
+}
+
+#SocialMediaLinks>:nth-child(1) {
+    max-width: 100%;
+    text-align: center;
+}
+
+#SocialMediaLinks> .profile-form-data>:nth-child(1)> label {
+    max-width: 60%;
+}
+
+
+#SocialMediaLinks> .profile-form-data>:nth-child(1)> select {
+    max-width: 100px;
+    height: 45px;
+    border: 0;
+    font-size: 14px;
+    background-color: transparent;
+    outline: none;
+    color: white;
+}
+
+#SocialMediaLinks> .profile-form-data>:nth-child(1)> input {
+    max-width: 100px;
+}
+
+#ProfilePic> .profile-form-data>:nth-child(1)> label {
+    max-width: 85%;
+    text-align: center;
+    font-weight: normal;
+}
+
+#ProfilePic> .profile-form-data>:nth-child(1)> input {
+    max-width: 100px;
+}

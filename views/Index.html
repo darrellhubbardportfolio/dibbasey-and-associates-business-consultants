@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title> <%= title %> </title>
+    <!-- Bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- Google Fonts 'Roboto' --> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Stylesheet -->
+	<link rel="stylesheet" href="/public/css/styles.css" />
+	<link rel="stylesheet" href="/public/css/components/navbar.css" />
+	<link rel="stylesheet" href="/public/css/components/footer.css" />
+  </head>
+  <body>
+
+	  <header>
+		  <nav id="decorator-nav">
+			  
+			  <div id="business-location" class="container d-flex flex-row align-items-center justify-content-center">
+				<i class="fa-solid fa-location-dot" style="font-size: 30px;"></i>
+				<span id="location-inject"> coming soon... </span>
+			  </div>
+
+			  <div id="business-contact-info" class="container d-flex flex-row align-items-center justify-content-center">
+					<i class="fa-solid fa-id-card-clip" style="font-size: 30px;"></i>
+				  <div class="container d-flex flex-column align-items-center justify-content-center">
+					<span id="phone-inject"> phone... </span>
+					<span id="email-inject"> email... </span>
+				  </div>
+			  </div>
+			  
+			  <div id="business-logo" class="container d-flex flex-column align-items-center justify-content-center">
+				<span> Dibbasey <span> & </span> Associates </span>
+				<span> Business Consulting </span>
+			  </div>
+
+			  <div id="business-time" class="container d-flex flex-row align-items-center justify-content-center">
+				  <i class="fa-solid fa-clock" style="font-size: 30px;"></i>
+				<span id="time-inject"> schedule... </span>
+			  </div>
+
+			  <div id="business-social-media" class="container d-flex flex-row align-items-center justify-content-center">
+				<!-- Facebook -->
+				<i class="fa-brands fa-facebook-f"></i>
+				<!-- Instagram -->
+				<i class="fa-brands fa-instagram"></i>
+				<!-- Twitter -->
+				<i class="fa-brands fa-twitter"></i>
+				<!-- LinkedIn -->
+				<i class="fa-brands fa-linkedin-in"></i>
+			  </div>
+			  
+		  </nav>
+		  <nav id="navbar">
+			  <a href="/"> Home </a>
+			  <a href="/about"> About </a>
+			  <a href="/contact"> Contact </a>
+			  <a href="/bookings"> Book Now </a>
+			  <!-- <button type="button" name="book_consultation_button"> Book Online </button> -->
+		  </nav>
+		  
+	  </header>
+
+      <!-- Inject Body Here -->
+      <AppPage>
+            <!-- When any route is reached this template will inject HTML inside of it. -->
+            <% if (page != "") { %>
+                <%- include(page) %>
+            <% } else if (page === "") { %>
+            
+            <% page = "Hello World" %>
+
+            <% } %>
+        </AppPage>
+	  
+	  <footer>
+
+		<div class="container d-flex flex-row align-item-center justify-content-center" style="padding: 12px 0;">
+			<!-- the logo -->
+			<div id="footer-logo" class="container d-flex flex-column align-items-center justify-content-center" style="gap: 8px;">
+
+				<img src="" width="100" height="100" />
+				<span style="font-size: 21px; color: gray;"> Dibbasey & Associates </span>
+				<span style="font-size: 10px; color: lightgray;"> Business Consultants </span>
+
+			</div>
+
+		  <form action="/messages/send" method="POST" name="stay_connected_form">
+			<span> Let's Stay Connected!</span>
+			<label for="email"> email </label>
+			  <input type="email" name="email" placeholder="email..." />
+			  <button type="submit" name="send-message_button"> Subscribe </button>
+		  </form>
+
+		</div>
+		  
+		  <div class="social-navbar container d-flex flex-column align-items-center justify-content-center">
+			<span style="font-size: 8px;"> Follow Us On </span>
+			<ul class="container d-flex flex-row align-items-center justify-content-center">
+
+				<!-- Facebook -->
+				<i class="social-media-icons fa-brands fa-facebook-f"></i>
+				<!-- Instagram -->
+				<i class="social-media-icons fa-brands fa-instagram"></i>
+				<!-- Twitter -->
+				<i class="social-media-icons fa-brands fa-twitter"></i>
+			</ul>
+		  </div>
+		  
+	  </footer>
+      
+    <!-- Bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+	<!-- Socket.io -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js" integrity="sha512-ttqbKrGZiTtSLguBZ2xNvZrhUv02IO/TRq5U6TG5TK90wbaXWup5kIJ1A1tLzjOk5Mea/G4seVNrU+lwTLfAzA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<!-- jQuery -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <!-- JavaScript -->
+    <script src="/public/js/navbar.js"></script>
+	<script src="/public/js/footer.js"></script>
+
+  </body>
+</html>

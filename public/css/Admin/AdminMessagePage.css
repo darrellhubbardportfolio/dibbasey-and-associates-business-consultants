@@ -1,0 +1,48 @@
+
+#Message-App {
+    background-color: white;
+    padding: 16px;
+    gap: 20px;
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    box-shadow: 2px 2px 8px rgb(170, 170, 170, 0.85);
+    border-radius: 4px;
+}
+
+#message-compose {
+    min-width: 100%;
+    height: 60px;
+    gap: 8px;
+	/*background-color: #afeeee;*/
+    position: relative;
+}
+
+#message-compose>:nth-child(1) {
+    font-size: 30px;
+    color: crimson;
+}
+
+#message-compose>:nth-child(2) {
+    font-size: 10px;
+}
+
+.msg-app {
+    height: 100px;
+    gap: 8px;
+    transition: 0.45s ease-out;
+}
+
+.msg-app:hover {
+    cursor: pointer;
+    transition: 0.3s ease-in;
+}
+
+.msg-app>:nth-child(1) {
+    font-size: 30px;
+    color: #343a40;
+}
+
+.msg-app>:nth-child(2) {
+    font-size: 12px;
+}

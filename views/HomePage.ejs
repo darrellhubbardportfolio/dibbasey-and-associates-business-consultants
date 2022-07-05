@@ -1,0 +1,300 @@
+
+<head>
+<title> Home Page </title>
+<!-- Stylesheet -->
+<link rel="stylesheet" href="/public/css/HomePage.css" />
+</head>
+
+	<div id="home-page">
+
+		<article>
+			<h1>Lorem ipsum dolor sit amet</h1>
+			<span>
+				Excepteur sint occaecat cupidatat non proident
+			</span>
+		</article>
+
+		<!-- View Appointments Shortcut -->
+		<div id="view-appointments-notification" class="container">
+			<i class="fa-solid fa-bell"></i> 
+			<h1> 16 </h1>
+			<span> appointments </span>
+		</div>
+		
+	</div>
+
+	<!-- Ways to Signup for Account -->
+	<div id="auth-signup">
+
+	<article>
+		<h1> Uh oh... username? </h1>
+		<p> Picking the right memorable username is complicated task, but we can simplify that for you by using what you are familiar with, your social medias. With 5+ ways to protect your information and login, its easy... </p>
+
+		<a href="/signup"> Now, Let's get you signed up!</a>
+
+	</article>
+
+	<ul id="social-media-login">
+
+		<!-- Google -->
+		<div class="social-media-authentications">
+			<i class="fa-brands fa-google" style="color: red;"></i>
+			<span> Google </span>
+		</div>
+
+		<!-- Facebook -->
+		<div class="social-media-authentications">
+			<i class="fa-brands fa-facebook-f" style="color: darkblue;"></i>
+			<span> Facebook </span>
+		</div>
+
+		<!-- Instagram -->
+		<div class="social-media-authentications">
+			<i class="fa-brands fa-instagram" style="color: pink;"></i>
+			<span> Instagram </span>
+		</div>
+
+		<!-- Twitter -->
+		<div class="social-media-authentications">
+			<i class="fa-brands fa-twitter" style="color: cornflowerblue;"></i>
+			<span> Twitter </span>
+		</div>
+
+		<!-- LinkedIn -->
+		<div class="social-media-authentications">
+			<i class="fa-brands fa-linkedin-in" style="color: royalblue;"></i>
+			<span> LinkedIn </span>
+		</div>
+
+		<!-- TikTok -->
+		<div class="social-media-authentications">
+			<i class="fa-brands fa-tiktok" style="color: gold;"></i>
+			<span> Tiktok </span>
+		</div>
+
+
+	</ul>
+	</div>
+
+	<!-- View Appointments
+	availabities for today,
+	prices,
+	when the next availabe one,
+	how you would like to setup the appointment by
+	-->
+	<div id="book-an-appointment">
+
+		<!--
+		Controls the phone navigation on the front of this application.
+		-->
+		<span id="previous-form-page" class="update-form-page material-icons" onclick="previous_page_view(this)"> arrow_back_ios </span>
+		<span id="next-form-page" class="update-form-page material-icons" onclick="next_page_view(this)"> arrow_forward_ios </span>
+		
+		<article class="container d-flex flex-column align-items-center justify-content-center">
+		<h1> Book </h1>
+		<span>
+			Book a consultation in just 3 easy steps!
+		</span>
+			<div class="container d-flex flex-row align-items-center justify-content-center" style="gap: 45px;">
+
+				<!-- Schedule Availability -->
+				<div class="container d-flex flex-column align-items-center" style="gap: 16px;">
+					<i class="fa-solid fa-calendar-check" style="font-size: 45px;"></i>
+					<span style="font-size: 10px"> Choose Appointment </span>
+				</div>
+				
+				<!-- Personal Availability -->
+				<div class="container d-flex flex-column align-items-center" style="gap: 16px;">
+					<i class="fa-solid fa-id-card-clip" style="font-size: 45px;"></i>
+					<span style="font-size: 10px"> Personal Information </span>
+				</div>
+				
+				<!-- Payments -->
+				<div class="container d-flex flex-column align-items-center" style="gap: 16px;">
+					<i class="fa-solid fa-credit-card" style="font-size: 45px;"></i>
+					<span style="font-size: 10px;"> Pay </span>
+				</div>
+
+			</div>
+			
+		</article>
+		
+		<div id="iphone" class="container d-flex flex-column align-items-center justify-content-center">
+		
+		<!-- App Top Navbar -->
+		<div id="iphone-top-navbar" class="container d-flex align-items-center justify-content-center">
+
+			<span class="container d-flex flex-column align-items-center justify-content-center" style="text-align: center;">
+				<strong> Dibbasey <span style="color: gray;">&</span> Associates</strong>
+				<span style="font-size: 8px;"> Business Consultancts </span>
+			</span>
+
+			<!-- Iphone Wifi -->
+			<div id="iphone-wifi" class="container d-flex align-items-center justify-content-center">
+				<span class="material-icons"> wifi </span>
+			</div>
+
+			<!-- Iphone Wifi Signal Strength -->
+			<div id="iphone-wifi-signal-level" class="container d-flex align-items-center justify-content-center">
+				<span class="material-icons"> signal_cellular_alt </span>
+			</div>
+
+			<!-- Battery with percentage -->
+			<div id="battery-percentage-indicator" class="container d-flex flex-column align-items-center justify-content-center">
+				<span class="material-icons"> battery_full</span>
+			</div>
+
+			<!-- Iphone bluetooth -->
+			<div id="iphone-bluetooth" class="container d-flex align-items-center justify-content-center">
+				<span class="material-icons"> bluetooth </span>
+			</div>
+
+		</div>
+
+		<!-- Simulated Appointment Form -->
+			<form action="" method="POST" name="iphone_book_appointment_form">
+
+			<!-- choose an appointment -->
+			<div name="form-booking-appointments" class="form-pages">
+
+				<i class="fa-solid fa-calendar-check" style="font-size: 45px;"></i>
+
+				<span class="form-pages-title"> Book an Appointment </span>
+
+				<label for="booking_date"> Select a Date </label>
+				<input type="date" name="booking_date" placeholder="choose appointment date..." />
+
+				<label for="booking_time"> Choose A Time </label>
+				<input type="time" name="booking_time" placeholder="choose a time..." selectMultiple = true />
+
+			</div>
+
+			<!-- this section collects personal information -->
+			<div name="form-personal-collection" class="form-pages">
+
+				<i class="fa-solid fa-id-card-clip" style="font-size: 45px;"></i>
+
+				<span class="form-pages-title"> Personal Information </span>
+
+				<label for="business_name"> business name </label>
+				<input type="text" name="business_name" placeholder="business name..." />
+
+				<label for="name"> what is your name? </label>
+				<input type="text" name="name" placeholder="name..." />
+
+				<label for="phone"> phone number </label>
+				<input type="text" name="phone" placeholder="phone..." onkeyup="checkPhoneLength(this)" maxlength=13 />
+				
+				<label for="email"> email address </label>
+				<input type="email" name="email" placeholder="email..." />
+				
+				<label for="address"> address </label>
+				<input type="text" name="address" placeholder="address" />
+
+				<label for="city"> city </label>
+				<input type="text" name="city" placeholder="city" />
+
+				<label for="state"> state </label>
+				<input type="text" name="state" placeholder="state" maxlength="6" />
+
+				<label for="zipcode"> zipcode </label>
+				<input type="text" name="zipcode" placeholder="zipcode" maxlength="5" />
+			</div>
+
+			<!-- Payment -->
+			<div name="form-payments" class="form-pages">
+
+					<i class="fa-solid fa-credit-card" style="font-size: 45px;"></i>
+
+				<span class="form-pages-title"> Payment </span>
+				<ul id="card-payments">
+					<!-- Visa Card -->
+					<i class="fa-brands fa-cc-visa"></i>
+					<!-- Master Card -->
+					<i class="fa-brands fa-cc-mastercard"></i>
+					<!-- Discover Card-->
+					<i class="fa-brands fa-cc-discover"></i>
+					<!-- American Express -->
+					<i class="fa-brands fa-cc-amex"></i>
+				</ul>
+
+				<label for="cardholder"> Cardholder Name </label>
+				<input type="text" name="cardholder" placeholder="Firstname Middle Intial Lastname" />
+
+				<label for="cardNo"> Card Number </label>
+				<input type="text" name="cardNo" placeholder="XXXX - XXXX - XXXX - XXXX" maxlength="16" />
+
+				<label for="expiration_date"> Expiration Date </label>
+				<input type="text" name="expiration_date" placeholder="MM - YY" style="max-width: 45%" maxlength="4" />
+	
+				<label for="csv"> CSV (back of card) </label>
+				<input type="number" name="csv" placeholder="3 digits" style="max-width: 45%;" maxlength="3" />
+
+				<div id="payment-review">
+					<span> Total Due </span>
+
+					<h1 id="payment-cost"> $45 <span> 00 </span> </h1>
+				</div>
+
+				<button type="submit" name="book_and_pay"> Book & Pay </button>
+
+			</div>
+				
+			</form>
+		
+			<!-- App Bottom Navbar -->
+			<div id="iphone-bottom-navbar" class="container d-flex align-items-center justify-content-center">
+
+				<div class="app-bottom-navlinks">
+					<span class="material-icons"> home </span>
+					<span class="app-bottom-navlinks-label"> Home </span>
+				</div>
+
+				<div class="app-bottom-navlinks">
+					<span class="material-icons"> search </span>
+					<span class="app-bottom-navlinks-label">Search </span>
+				</div>
+
+				<div class="app-bottom-navlinks">
+					<span class="material-icons"> notifications </span>
+					<span class="app-bottom-navlinks-label"> Notifications </span>
+				</div>
+
+				<div class="app-bottom-navlinks">
+					<span class="material-icons"> schedule </span>
+					<span class="app-bottom-navlinks-label"> Schedules </span>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+	<script>
+		function checkPhoneLength (e) {
+		
+		if (e.value.length % 3 === 0) {
+			e.value = e.value.join("-");
+			console.log("e.value length after:\t" + phoneLength);
+		}
+		else {
+			console.log("not long enough");
+		}
+		}
+	</script>
+
+	<!--
+	take a look at the team
+	-->
+	<div id="meet-our-team">
+	<span > Meet Our Team </span>
+	<!-- <img src="/public/images/team.jpg" alt="<a href='https://www.freepik.com/vectors/community'>Community vector created by pch.vector - www.freepik.com</a>" width="100%" height="100%" /> -->
+	<!-- <img src="/public/images/team-b.jpg" alt="<a href='https://www.freepik.com/vectors/work-with-us'>Work with us vector created by pikisuperstar - www.freepik.com</a>" width="100%" height="100%" /> -->
+	</div>
+
+
+<!-- Socket.io -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js" integrity="sha512-ttqbKrGZiTtSLguBZ2xNvZrhUv02IO/TRq5U6TG5TK90wbaXWup5kIJ1A1tLzjOk5Mea/G4seVNrU+lwTLfAzA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="/public/js/Booking.js"></script>
+<script src="/public/js/App.js"></script>

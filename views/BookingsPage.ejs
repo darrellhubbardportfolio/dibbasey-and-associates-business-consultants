@@ -1,0 +1,171 @@
+
+<head>
+    <link rel="stylesheet" href="/public/css/components/BookingsForm.css" />
+</head>
+
+<ul id="BookingDates"></ul>
+
+<ul id="BookingTimes"></ul>
+
+<!--
+Controls the phone navigation on the front of this application.
+-->
+<span id="previous-form-page" class="update-form-page material-icons" onclick="previous_page_view(this)"> arrow_back_ios </span>
+
+<span id="next-form-page" class="update-form-page material-icons" onclick="next_page_view(this)"> arrow_forward_ios </span>
+
+<form action="/bookings/done" method="POST" name="bookings_form">
+
+    <!-- choose an appointment -->
+    <div name="form-booking-appointments" class="form-pages">
+
+        <i class="fa-solid fa-calendar-check" style="font-size: 45px;"></i>
+
+        <span class="form-pages-title"> Book an Appointment </span>
+
+        <label for="booking_date"> Select a Date </label>
+        <input type="date" name="booking_date" placeholder="choose appointment date..." />
+
+        <label for="booking_time"> Choose A Time </label>
+        <input type="time" name="booking_time" placeholder="choose a time..." selectMultiple = true />
+
+    </div>
+    
+    <!-- this section collects personal information -->
+    <div name="form-personal-collection" class="form-pages">
+
+        <i class="fa-solid fa-id-card-clip" style="font-size: 45px;"></i>
+
+        <span class="form-pages-title"> Personal Information </span>
+
+        <label for="business_name"> business name </label>
+        <input type="text" name="business_name" placeholder="business name..." />
+
+        <label for="name"> what is your name? </label>
+        <input type="text" name="name" placeholder="name..." />
+
+        <label for="phone"> phone number </label>
+        <input type="text" name="phone" placeholder="phone..." onkeyup="checkPhoneLength(this)" maxlength=13 />
+        
+        <label for="email"> email address </label>
+        <input type="email" name="email" placeholder="email..." />
+        
+        <label for="address"> address </label>
+        <input type="text" name="address" placeholder="address" />
+
+        <label for="city"> city </label>
+        <input type="text" name="city" placeholder="city" />
+
+        <label for="state"> state </label>
+        <input type="text" name="state" placeholder="state" maxlength="6" />
+
+        <label for="zipcode"> zipcode </label>
+        <input type="text" name="zipcode" placeholder="zipcode" maxlength="5" />
+    </div>
+
+    <!-- Payment -->
+    <div name="form-payments" class="form-pages">
+
+            <i class="fa-solid fa-credit-card" style="font-size: 100px;"></i>
+
+        <span class="form-pages-title"> Payment </span>
+        <ul id="card-payments">
+            <!-- Visa Card -->
+            <i class="fa-brands fa-cc-visa"></i>
+            <!-- Master Card -->
+            <i class="fa-brands fa-cc-mastercard"></i>
+            <!-- Discover Card-->
+            <i class="fa-brands fa-cc-discover"></i>
+            <!-- American Express -->
+            <i class="fa-brands fa-cc-amex"></i>
+        </ul>
+
+        <label for="cardholder"> Cardholder Name </label>
+        <input type="text" name="cardholder" placeholder="Firstname Middle Intial Lastname" />
+
+        <label for="cardNo"> Card Number </label>
+        <input type="text" name="cardNo" placeholder="XXXX - XXXX - XXXX - XXXX" maxlength="16" />
+
+        <label for="expiration_date"> Expiration Date </label>
+        <input type="text" name="expiration_date" placeholder="MM - YY" style="max-width: 45%" maxlength="4" />
+
+        <label for="csv"> CSV (back of card) </label>
+        <input type="number" name="csv" placeholder="3 digits" style="max-width: 45%;" maxlength="3" />
+
+        <div id="payment-review">
+            <span> Total Due </span>
+
+            <h1 id="payment-cost"> $45 <span> 00 </span> </h1>
+        </div>
+
+        <button type="submit" name="book_and_pay"> Book & Pay </button>
+
+    </div>
+
+</form>
+
+<script src="/public/js/Booking.js"></script>
+<script type="text/javascript">
+
+    var view = 0;
+
+    function previous_page_view (e) {
+
+        var form_pages = document.getElementsByClassName("form-pages");
+
+        var pos = form_pages[0].offsetWidth;
+
+        if (view > 0) {
+            view -=1;
+            for (var pg = 0; pg < form_pages.length; pg++) {
+                form_pages[pg].style.transform = "translateX(-" + (view * pos) + "px)";
+                // slow down transition
+                form_pages[pg].style.transition = "0.30s linear";
+                // check results
+                console.log("pos:\t" + pos);
+            }
+        }
+        else {
+            view = 0;
+            for (var pg = 0; pg < form_pages.length; pg++) {
+                form_pages[pg].style.transform = "translateX(-" + (view * pos) + "px)";
+                // slow down transition
+                form_pages[pg].style.transition = "0.30s linear";
+                // check results
+                console.log("pos:\t" + pos);
+            }
+        }
+
+    }
+
+    function next_page_view (e) {
+
+        var form_pages = document.getElementsByClassName("form-pages");
+        
+        var pos = form_pages[0].offsetWidth;
+
+        if (view < form_pages.length) {
+            view +=1;
+            for (var pg = 0; pg < form_pages.length; pg++) {
+                form_pages[pg].style.transform = "translateX(-" + (view * pos) + "px)";
+                // slow down transition
+                form_pages[pg].style.transition = "0.30s linear";
+                // check results
+                console.log("pos:\t" + pos);
+            }
+        }
+        else {
+            view = form_pages.length;
+            for (var pg = 0; pg < form_pages.length; pg++) {
+                form_pages[pg].style.transform = "translateX(-" + (view) + "px)";
+                // slow down transition
+                form_pages[pg].style.transition = "0.30s linear";
+                // check results
+                console.log("pos:\t" + pos);
+            }
+        }
+
+    }
+
+
+</script>

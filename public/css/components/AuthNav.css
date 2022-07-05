@@ -1,0 +1,206 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+#AuthNav {
+    flex: 1.2;
+    height: 100vh;
+    max-height: 100vh;
+    background-color: transparent;
+    /*background-color: white;*/
+    color: #343a40;
+    overflow: hidden;
+    overflow-y: scroll;
+    /*box-shadow: 8px 0 16px rgb(200, 200, 200, 0.85);*/
+    padding: 0;
+    padding-top: 20px;
+    gap: 20px;
+	position: relative;
+    z-index: 2;
+}
+
+#AuthNav::before {
+    content: "";
+    width: 85%;
+    max-width: 85%;
+    height: 100vh;
+    max-height: 100vh;
+    background-color: white;
+    /*box-shadow: 8px 0 8px rgb(200, 200, 200, 0.85);*/
+	position: absolute; 
+    top: 0; 
+    left: 0;
+    z-index: -1;
+}
+
+#AuthNav::-webkit-scrollbar {
+    width: 8px;
+}
+
+#AuthNav::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: rgb(0, 125, 200, 0.60);
+}
+
+#AuthNav::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+header {
+	width: 85%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#user-overview {
+	width: 80%;
+    max-width: 80%;
+    min-height: 0;
+    background-color: transparent;
+	color: #343a40;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	z-index: 1;
+    padding: 0 4px;
+    gap: 16px;
+}
+
+#user-profile-pic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    position: relative;
+    margin-top: 8px;
+}
+
+#user-profile-pic::after {
+    content: "";
+    width: 120%;
+    height: 120%;
+    background-color: white;
+    border: 4px solid lightgray;
+    border-radius: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+#username {
+    font-size: 16px;
+}
+
+#user-occupation {
+    font-size: 12px;
+}
+
+#business-logo {
+	color: #343a40;
+    /*font-family: 'Rubik Moonrocks', cursive;*/
+    font-family: 'Comfortaa', cursive;
+    width: 100%;
+    max-height: 30px;
+    margin-bottom: auto;
+}
+#business-logo>:nth-child(1) {
+	font-size: 12px;
+	font-weight: bolder;
+	gap: 2px;
+}
+
+@keyframes nav-float-in {
+    from {
+        transform: translate(-100%, 100);
+    }
+    to {
+        transform: translate(0, 0);
+    }
+}
+
+#navbar {
+	width: 98%;
+    max-width: 98%;
+    max-height: 500px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+    background-color: rgb(52, 58, 64, 0.95);
+    backdrop-filter: blur(4px);
+	font-size: 14px;
+    box-shadow: 1px -1px 4px #555555;
+    border-top-right-radius: 100px;
+    /*padding: 4px;*/
+    padding-top: 8px;
+    position: absolute;
+    bottom: 0;
+    /*transform: translate(-100%, 100%);*/
+    z-index: 2;
+    /*animation: nav-float-in 1.25s ease-in forwards;*/
+}
+
+.sidebarNavLinks {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+	text-decoration: none;
+    text-align: left;
+    min-width: 60%;
+    max-width: 60%;
+    height: 100px;
+	padding: 0 8px;
+	color: #ffffff;
+	font-size: 12px;
+	font-weight: normal;
+    position: relative;
+    transition: 0.3s ease-out;
+}
+
+.sidebarNavLinks::after {
+    content: "";
+    display: none;
+    border-radius: 100%;
+    width: 16px;
+    height: 16px;
+    background-color: cornflowerblue;
+    position: absolute;
+    z-index: 1;
+    left: -30px;
+}
+
+.sidebarNavLinks:hover> .sidebarNavLinks::after {
+    transition: 0.15s ease-in;
+    cursor: pointer;
+    display: flex;
+}
+
+#navbar>:nth-child(8) {
+    color: #343a40;
+    /*background-color: gold;*/
+	background-color: #afeeee;
+    position: relative;
+    overflow: visible;
+    min-width: 100%;
+    max-width: 99%;
+    /*height: 125px;*/
+    padding-left: 60px;
+}
+
+#navbar>:nth-child(8)::after {
+    content: "";
+    /*background-color: gold;
+    box-shadow: 4px -16px 16px black;*/
+    height: 100%;
+    min-width: 100%;
+    position: absolute;
+    z-index: 0;
+}
+
+#navbar>:nth-child(8)> .material-icons {
+    /*font-size: 35px;*/
+}

@@ -1,0 +1,384 @@
+#AdminPage {
+	overflow-y: scroll;
+	padding: 0;
+	padding-top: 20px;
+}
+
+#AdminPage::-webkit-scrollbar {
+	display: none;
+}
+
+#schedule-page {
+	width: 45%;
+	max-width: 45%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 4px;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+}
+
+#schedule-page> h1 {
+	/*font-weight: bolder;*/
+	font-size: 30px;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+#schedule-page>:nth-child(3) {
+	font-size: 12px;
+}
+
+#calendar-dates {
+	width: 400px;
+	height: 350px;
+	max-height: 350px;
+	background-color: transparent;
+	position: relative;
+	padding: 20px;
+	max-width: 400px;
+	overflow-x: hidden;
+	/*box-shadow: 0 0 8px #aaaaaa;*/
+}
+
+.update-date-views {
+	position: absolute;
+	z-index: 1;
+	font-size: 60px;
+	transition: 0.45s ease-out;
+}
+
+.update-date-views:hover {
+	cursor: pointer;
+	transition: 0.3s ease-in;
+	color: lightgray;
+}
+
+#days-of-the-week {
+	min-width: 100px;
+	max-width: 100px;
+	height: 600px;
+	max-height: 600px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	border-top-left-radius: 30px;
+	/*border-top-right-radius: 30px;*/	
+	background-color: rgb(52, 58, 64, 0.95);
+	backdrop-filter: blur(4px);
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+	padding: 0;
+}
+
+#days-of-the-week::before {
+	content: "";
+	width: 100%;
+	height: 20px;
+	/*background-color: gold;*/
+	background-color: #afeeee;
+	position: absolute;
+	bottom: -16px;
+	z-index: 0;
+	/*border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;*/
+}
+
+.days {
+	min-width: 100%;
+	max-width: 100%;
+	height: 60px;
+	/*background-color: white;*/
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	transition: 0.32s ease-out;
+	position: relative;
+}
+
+.days:hover {
+	cursor: pointer;
+	transition: 0.16s ease-in;
+}
+
+.days>:nth-child(1) {
+	font-weight: normal;
+	font-size: 12px;
+	color: white;
+}
+
+.days>:nth-child(3) {
+	color: white;
+}
+
+button[name='days-of-the-week'] {
+	height: 45px;
+	width: 100px;
+	background-color: royalblue;
+	color: white;
+	font-size: 12px;
+	border: 0;
+	outline: none;
+	border-radius: 4px;
+	transition: 0.45s ease-out;
+	position: absolute;
+	right: 30px;
+	cursor: pointer;
+	z-index: 2;
+}
+
+button[name='days-of-the-week']:hover {
+	transition: 0.3s ease-in;
+	cursor: pointer;
+}
+
+form[name="schedule_form"] {
+	box-shadow: 0 0 20px rgb(125, 125, 125, 0.60);
+	background-color: rgb(255, 255, 255, 0.60);
+	backdrop-filter: blur(4px);
+	color: #343a40;
+	padding: 20px;
+	width: 60%;
+	height: 425px;
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	gap: 4px;
+	max-width: 100%;
+	overflow-x: hidden;
+	border-radius: 8px;
+	position: absolute;
+	top: 100px;
+	z-index: 1;
+}
+
+#close-scheduler {
+	width: 200px;
+	height: 30px;
+	position: absolute;
+	bottom: 0;
+	cursor: pointer;
+	font-size: 12px;
+}
+
+@keyframes fade_in {
+	from {
+		display: none;
+	}
+	to {
+		display: flex;
+	}
+}
+
+@keyframes fade_out {
+	from {
+		display: flex;
+	}
+	to {
+		display: none;
+	}
+}
+
+#set-schedule-hours {
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	border-radius: 20px;
+	box-shadow: 0 0 20px rgb(125, 125, 125, 0.60);
+	position: absolute;
+	top: 100px;
+	z-index: 2;
+	background-color: rgb(255, 255, 255, 0.60);
+	backdrop-filter: blur(4px);
+}
+
+.schedule-hours {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	width: 300px;
+	height: 300px;
+	background-color: white;
+}
+
+.schedule-hours>:nth-child(1) {
+	font-size: 12px;
+}
+
+.schedule-hours>:nth-child(2) {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.schedule-hours>:nth-child(2)>:nth-child(2) {
+	font-size: 45px;
+	margin-bottom: 30px;
+	font-weight: bolder;
+	color: gray;
+}
+
+.hours> input, .minutes> input {
+	width: 100px;
+	height: 125px;
+	font-size: 60px;
+	font-weight: bold;
+	color: gray;
+	text-align: right;
+	background-color: transparent;
+	border: 0;
+	outline: none;
+}
+
+select[name="select_schedule_time"], select[name="select_schedule_time"] {
+	border-radius: 4px;
+	border: 1px solid #343a40;
+	height: 45px;
+	width: 100px;
+	font-size: 10px;
+	text-align: center;
+	cursor: pointer;
+	outline: none;
+	background-color: transparent;
+}
+
+button[name='set_appointment_time'] {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 16px;
+	height: 60px;
+	width: 125px;
+	background-color: royalblue;
+	color: white;
+	padding: 4px 20px;
+	font-size: 12px;
+	border: 0;
+	outline: none;
+	border-radius: 4px;
+	transition: 0.45s ease-out;
+}
+
+button[name='set_appointment_time']:hover {
+	transition: 0.3s ease-in;
+	cursor: pointer;
+}
+
+
+
+button[name='add_new_appointment'] {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 4px;
+	height: 45px;
+	width: 125px;
+	/*background-color: gold;*/
+	background-color: #afeeee;
+	color: #343a40;
+	padding: 0 20px;
+	font-size: 12px;
+	border: 0;
+	outline: none;
+	border-radius: 4px;
+	transition: 0.45s ease-out;
+	position: absolute;
+	right: 16px;
+	top: 30px;
+}
+
+button[name='add_new_appointment']:hover {
+	transition: 0.3s ease-in;
+	cursor: pointer;
+}
+
+#Schedule {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	min-height: 600px;
+	max-width: 100%;
+	max-height: 600px;
+	background-color: white;
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+
+#Update-Schedule-Views {
+	min-width: 100%;
+	height: 60px;
+	max-width: 100%;
+	padding: 8px 125px;
+	/*background-color: gold;*/
+	background-color: #afeeee;
+	color: #343a40;
+}
+
+#searchform {
+	width: 425px;
+	height: 45px;
+	background-color: transparent;
+	border-bottom: 2px solid #343a40;
+}
+
+#searchform> .material-icons {
+	font-size: 16px;
+}
+
+input[name="search"] {
+	flex: 1;
+	height: 45px;
+	border: 0;
+	outline: none;
+	background-color: transparent;
+	color: black;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+input[name="search"]::-webkit-input-placeholder {
+	color: black;
+	font-size: 16px;
+}
+
+#Update-Schedule-Views> select {
+	width: 125px;
+	height: 45px;
+	background-color: transparent;
+	font-size: 16px;
+	border-radius: 4px;
+	border: 2px solid #343a40;
+}
+
+#Schedule-Details {
+	position: absolute;
+	bottom: 0;
+	min-width: 100%;
+	max-width: 100%;
+	height: 45px;
+	max-height: 45px;
+	display: flex;
+	align-items: center;
+	/*justify-content: center;*/
+	gap: 20px;
+	padding: 0 45px;
+	background-color: #343a40;
+	color: white;
+	font-size: 10px;
+}
